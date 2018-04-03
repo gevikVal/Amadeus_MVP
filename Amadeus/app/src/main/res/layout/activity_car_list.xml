@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/add_guest_bg"
+    android:orientation="vertical"
+    tools:context="fair.com.example.gevik.amadeus.presentation.car_list.CarListActivity">
+
+    <Button
+        android:layout_marginTop="8dp"
+        android:id="@+id/filterBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Sort" />
+
+    <FrameLayout
+        android:layout_marginTop="8dp"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </FrameLayout>
+
+
+</LinearLayout>

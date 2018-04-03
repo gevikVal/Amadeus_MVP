@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Amadeus</string>
+    <string name="action_settings">Settings</string>
+    <string name="api_key">BH0YcvY52j0ee98eMLf9YMoHUjzzqZTi</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pref_company_label_ASC">Company ASC</string>
+    <string name="pref_company_label_DSC">Company DSC</string>
+    <string name="pref_company_sort_value_asc">company ASC</string>
+    <string name="pref_company_sort_value_dsc">company DSC</string>
+    <string name="pref_company_key">companySort</string>
+    <string name="pref_distance_label_ASC">Distance ASC</string>
+    <string name="pref_distance_label_DSC">Distance DSC</string>
+    <string name="pref_distance_sort_value_asc">Distance ASC</string>
+    <string name="pref_distance_sort_value_dsc">Distance DSC</string>
+    <string name="pref_price_label_ASC">Price ASC</string>
+    <string name="pref_price_label_DSC">Price DSC</string>
+    <string name="pref_price_sort_value_asc">Price ASC</string>
+    <string name="pref_price_sort_value_dsc">Price DSC</string>
+    <string name="company">Sort list</string>
+    <string name="distance">Distance</string>
+    <string name="price">Price</string>
+</resources>

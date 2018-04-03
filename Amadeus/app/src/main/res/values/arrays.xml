@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_company_options">
+        <item>@string/pref_company_label_ASC</item>
+        <item>@string/pref_company_label_DSC</item>
+        <item>@string/pref_distance_label_ASC</item>
+        <item>@string/pref_distance_label_DSC</item>
+        <item>@string/pref_price_label_ASC</item>
+        <item>@string/pref_price_label_DSC</item>
+    </string-array>
+
+    <string-array name="pref_company_values">
+        <item>@string/pref_company_sort_value_asc</item>
+        <item>@string/pref_company_sort_value_dsc</item>
+        <item>@string/pref_distance_sort_value_asc</item>
+        <item>@string/pref_distance_sort_value_dsc</item>
+        <item>@string/pref_price_sort_value_asc</item>
+        <item>@string/pref_price_sort_value_dsc</item>
+    </string-array>
+
+
+    <string-array name="pref_distance_options">
+        <item>@string/pref_distance_label_ASC</item>
+        <item>@string/pref_distance_label_DSC</item>
+    </string-array>
+
+    <string-array name="pref_distance_values">
+        <item>@string/pref_distance_sort_value_asc</item>
+        <item>@string/pref_distance_sort_value_dsc</item>
+    </string-array>
+</resources>
