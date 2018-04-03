@@ -25,5 +25,4 @@ public class CarListModule {
         return new CarListModel(new CarRealmRepository());
     }
 
-
 }

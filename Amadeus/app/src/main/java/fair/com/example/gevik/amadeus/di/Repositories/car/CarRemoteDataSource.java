@@ -45,7 +45,7 @@ public class CarRemoteDataSource implements CarDataSourceContract.RemoteDataSour
     @Override
     public Single<ResultResponse> getCars(final double latitude, final double longitude, int radius, String pickUp, String dropOff) {
         Single<ResultResponse> remote = carHubService.getCarReuslts("CE3jgSBvt6jnOQhOCGw6vrKl2DepsGWp", latitude, longitude,
-                radius, pickUp, dropOff).doOnSuccess(ResultResponse->saveDB(ResultResponse,1,1));
+                radius, pickUp, dropOff).doOnSuccess(ResultResponse -> saveDB(ResultResponse, 1, 1));
         return remote;
 
     }
@@ -64,9 +64,9 @@ public class CarRemoteDataSource implements CarDataSourceContract.RemoteDataSour
         }
         final double meter = 1609.344;
         LatLng currentLocationLatLng = new LatLng(latitude, longitude);
-        final android.location.Location cuurent = new android.location.Location("point A");
-        cuurent.setLatitude(currentLocationLatLng.latitude);
-        cuurent.setLongitude(currentLocationLatLng.longitude);
+        final android.location.Location current = new android.location.Location("point A");
+        current.setLatitude(currentLocationLatLng.latitude);
+        current.setLongitude(currentLocationLatLng.longitude);
         try (final Realm realm = Realm.getDefaultInstance()) {
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
@@ -92,20 +92,18 @@ public class CarRemoteDataSource implements CarDataSourceContract.RemoteDataSour
                             LatLng carLatLang = new LatLng(location.getLatitude(), location.getLongitude());
                             carLocation.setLatitude(carLatLang.latitude);
                             carLocation.setLongitude(carLatLang.longitude);
-                            double distance = cuurent.distanceTo(carLocation);
+                            double distance = current.distanceTo(carLocation);
 
                             location.setDistance(distance / meter);
                         } else {
                             continue;
                         }
-
                     }
                 }
             });
         }
 
         try (final Realm realm = Realm.getDefaultInstance()) {
-            RealmList<Car> carRealmList;
             realm.executeTransaction(new Realm.Transaction() {
                 @Override
                 public void execute(Realm realm) {
@@ -132,7 +130,5 @@ public class CarRemoteDataSource implements CarDataSourceContract.RemoteDataSour
                 }
             });
         }
-
-
     }
 }
