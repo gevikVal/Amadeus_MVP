@@ -68,7 +68,7 @@ public class CarsPresenter implements CarsPresentationContract.Presenter, Lifecy
     public void onCarsClick(Car car) {
 
     }
-
+    //lifecycle observer
     @Override
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     public void onPause() {
