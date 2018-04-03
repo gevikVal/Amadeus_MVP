@@ -49,13 +49,14 @@ import fair.com.example.gevik.amadeus.di.component.CarComponent;
 import fair.com.example.gevik.amadeus.di.database.dao.util.ResultViewModel;
 import fair.com.example.gevik.amadeus.di.module.CarModule;
 import fair.com.example.gevik.amadeus.network.MessageEvent;
+import fair.com.example.gevik.amadeus.presentation.BaseActivity;
 import fair.com.example.gevik.amadeus.presentation.car_list.CarListActivity;
 import fair.com.example.gevik.amadeus.realm_models.ResultResponse;
 import me.nlmartian.silkcal.DatePickerController;
 import me.nlmartian.silkcal.DayPickerView;
 import me.nlmartian.silkcal.SimpleMonthAdapter;
 
-public class MainActivity extends AppCompatActivity implements CarsPresentationContract.View, PlaceSelectionListener, DatePickerController {
+public class MainActivity extends BaseActivity implements CarsPresentationContract.View, PlaceSelectionListener, DatePickerController {
 
     CarComponent carComponent;
     DayPickerView calendarView;
