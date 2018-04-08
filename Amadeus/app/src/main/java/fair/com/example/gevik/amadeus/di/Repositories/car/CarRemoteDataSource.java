@@ -1,5 +1,8 @@
 package fair.com.example.gevik.amadeus.di.Repositories.car;
 
+import android.content.res.Resources;
+import android.util.Log;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import org.greenrobot.eventbus.EventBus;
@@ -34,17 +37,20 @@ public class CarRemoteDataSource implements CarDataSourceContract.RemoteDataSour
     private CarHubService carHubService;
     Retrofit retrofit;
     NetworkState networkState;
+    String apiKey = "";
 
     @Inject
-    public CarRemoteDataSource(CarHubService carHubService, Retrofit retrofit, NetworkState networkState) {
+    public CarRemoteDataSource(CarHubService carHubService, Retrofit retrofit, NetworkState networkState,String apiKey) {
         this.carHubService = carHubService;
         this.retrofit = retrofit;
         this.networkState = networkState;
+        this.apiKey = apiKey;
+        Log.i("apiKeyIs",""+apiKey);
     }
 
     @Override
     public Single<ResultResponse> getCars(final double latitude, final double longitude, int radius, String pickUp, String dropOff) {
-        Single<ResultResponse> remote = carHubService.getCarReuslts("CE3jgSBvt6jnOQhOCGw6vrKl2DepsGWp", latitude, longitude,
+        Single<ResultResponse> remote = carHubService.getCarReuslts(apiKey, latitude, longitude,
                 radius, pickUp, dropOff).doOnSuccess(ResultResponse -> saveDB(ResultResponse, 1, 1));
         return remote;
 

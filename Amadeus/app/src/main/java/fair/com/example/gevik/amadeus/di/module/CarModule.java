@@ -1,7 +1,10 @@
 package fair.com.example.gevik.amadeus.di.module;
 
+import android.content.Context;
+
 import dagger.Module;
 import dagger.Provides;
+import fair.com.example.gevik.amadeus.R;
 import fair.com.example.gevik.amadeus.di.Repositories.car.CarDataSourceContract;
 import fair.com.example.gevik.amadeus.di.Repositories.car.CarRemoteDataSource;
 import fair.com.example.gevik.amadeus.di.Repositories.car.CarRepository;
@@ -25,8 +28,8 @@ public class CarModule {
 
     @Provides
 
-    public CarDataSourceContract.RemoteDataSource provideCarRemoteDataSource(CarHubService carHubService, Retrofit retrofit, NetworkState networkState) {
-        return new CarRemoteDataSource(carHubService, retrofit, networkState);
+    public CarDataSourceContract.RemoteDataSource provideCarRemoteDataSource(CarHubService carHubService, Retrofit retrofit, NetworkState networkState,Context context) {
+        return new CarRemoteDataSource(carHubService, retrofit, networkState,context.getResources().getString(R.string.api_key));
     }
 
     @Provides
